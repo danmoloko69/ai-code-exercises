@@ -16,12 +16,9 @@ Exercise Part 1: Understanding Project Structure
 
 3.Apply the Project Structure Prompt:
 
-*Compare the AI's analysis with your own observation
-
+*Compare the AI's analysis with your own observation.
 -The AI clerified that Task Manager project is a command-line task management app, not only a creating task and list and due-date prioritization. It also update, tag, delete, and inspect tasks. Tasks can have a title and description, priority: LOW, MEDIUM, HIGH, URGENT, a status: todo, in_progress, review, done and an optional due date. With tags created/updated/completed timestamps.
-
 -The liabrary I stated are correct but it uses even more like json fro saving and loading task, os to check whether the storage files axist, uuid to generate unique task IDs and enum for task priority and staus values.
-
 -It also explains the main components models.py, storage.py, cli.py and app.py.
 
 4.Documnet your findings:
