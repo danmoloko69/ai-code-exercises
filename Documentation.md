@@ -2,25 +2,31 @@ Exercise Part 1: Understanding Project Structure
 
 2.Form initial understanding:
 
-*Write best guess aboout how the codebase is orginised
+*Write best guess aboout how the codebase is orginised.
+
 -I think the Task Manager project is a application that crates, list and prioritises task base on their due date. After the stats function gathered information on task completed in the 7 day, status and priority.
 
-*List the technologies and frameworks you think it uses
+*List the technologies and frameworks you think it uses.
+
 -The are standard python libraries used which is datetime and timedelta for time management and argparse for CLI argument parsing.
 
-*Identify what you think are the main components
+*Identify what you think are the main components.
+
 -I think it would be the TaskManager with its components like models.py to define the data structure, storage.py for loading task, cli.py dtermines the command line interface.
 
 3.Apply the Project Structure Prompt:
 
 *Compare the AI's analysis with your own observation
+
 -The AI clerified that Task Manager project is a command-line task management app, not only a creating task and list and due-date prioritization. It also update, tag, delete, and inspect tasks. Tasks can have a title and description, priority: LOW, MEDIUM, HIGH, URGENT, a status: todo, in_progress, review, done and an optional due date. With tags created/updated/completed timestamps.
+
 -The liabrary I stated are correct but it uses even more like json fro saving and loading task, os to check whether the storage files axist, uuid to generate unique task IDs and enum for task priority and staus values.
+
 -It also explains the main components models.py, storage.py, cli.py and app.py.
 
 4.Documnet your findings:
 
-*Recoerd any misconceptions you had
+*Record any misconceptions you had
 -I did not fully explain the logic of the application. Also did not list all the tools used.
 
 *Note important entry points and architectural patterns identified.
