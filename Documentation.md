@@ -45,6 +45,7 @@ Exercise Part 1: Understanding Project Structure
 - storage.py this handles persistance. Laod task from tasks.json, save task back to json, and provides methods to add, update, delete and retrieve tasks.
 
 
+
 Exercise Part 2: Finding Feature Implementation
 
 2. Form a hypothesis:
@@ -91,3 +92,111 @@ Exercise Part 2: Finding Feature Implementation
 
 
 
+Excercise Part 3: Understanding Domain Model
+
+1. Extract domain model:
+
+* Identify the core entity cleases
+
+- The core entity classes in model.py are TaskPriority, TaskStatus and Task. Then in storage.py we find TaskStorage.
+
+* Look for the business logic related to tasks
+
+- This is the business logic found in the app.py file which is TaskManager.
+
+* Note any terminology or concepts that seem specific to this application
+
+- Task, Tags, TaskID, Status workflow, Priority scale and Overdue task.
+
+2. Form initial understanding 
+
+* Write a brief explanation of what you think each entity represent.
+
+- Task: this is the core item the app manages, it has the title, description, priority, status, due dates, timestamps, completion date and tags. 
+
+- TaskStatus: an enumiration that represents where a task is in workflow, TODO, IN_PROGRESS, REVIEW and DONE.
+
+- TaskPriority: an enumiration that determines the tasks importantance, LOW, MEDIUM, HIGH and URGENT.
+
+- TaskStorage: it handles saving and loading a collection of task from task.json.
+
+* Note any questions or confusion you have about the business logic
+- I need a little clarity about the due_date_str if statement.
+
+4. Test your knowledge:
+
+* Create a glossary of domain terms used in the application.
+
+- Task: The main item of application can have title, description, stauts, due date, timestamp and tags.
+
+- TaskID: A unique number generated using UUID used to find a specific task.
+
+- Title: The short name of the task.
+
+- Description: This is the short summary about the task.
+
+- Status: This shows current stage of the task. Can be TODO, IN_PROGRESS, REVIEW and DONE.
+
+- Priority: The imprtance of the task. Can be LOW, MEDIUM, HIGH and URGENT.
+
+- Due date: This is the date in which the task need to be completed. Its optional.
+
+- Overdue task: This are the task that should have been done already.
+
+- Created at: The timestamp on when the task was created.
+
+- Updated at: The timestamp showig when its was last changed
+
+- Complited at: Timestamp showing on when it was complited.
+
+- Tag: A label used to group certain task.
+
+- Task manager: Is the aplication that manages task handling like list and updating.
+
+- Task Storage: This infrastructure is responsible for saving and loading task from task.json.
+
+- Statistics: A summary of total task, task by priority, overdue task and tasks completed in the last 7 days.
+
+- Persistance: Saving of task data so it still exist after the program closes. This is in tasks.json.
+
+
+
+Exercise Part 4: Practical Application
+
+2. Planning: Based on your understanding from the previous parts:
+
+* Identify which files you would need to modify
+
+- This will include model.py, cli.py and the main logic app.py with storage not mmodified as it only verifies persistance.
+
+* Outline the changes you would make to implement this rule
+
+- Firstly on the model.py file I would add a new status ABANDONED
+
+- Then add a function to check whether a task is over due by 7 days and not of high priority.
+
+- Then on main logic app.py add a logc that automatically marks old overdue task as abandoned. 
+
+- The cli.py also will be updated on its status list. This will allow it to filter by new status.
+
+* Note any questions you would ask your team before implementing
+
+- Should the high priority mean high or also urgent. 
+
+- Should users be allowed to manually mark task as abandoned. 
+
+- Should the ovedue for more 7 days mean exactly on the same day or following day
+
+3. Reflection: 
+
+* How did the AI prompts help you understand where and how to implement this feature
+
+- It starts by explaining the concepts and the business relationship between the components. It validated my understanding before with the questioning. 
+
+* What aspects of the codebase are you still unsure about
+
+- This would be the cli intergration with the main app.py and the data flow.
+
+* What would be your next steps to deepen your understanding
+
+- Understanding more on the data flow functionality from the cli to the main app.py logic.
