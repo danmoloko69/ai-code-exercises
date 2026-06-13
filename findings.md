@@ -208,12 +208,12 @@ Final Discussion and Reflection
 
 * Which prompt was most helpful for building your understanding?
 
-- That would be Prompt 3: Understanding Domain Models and Business Concept because it was the topic I didi not understand the most and I was able to grasp it in less time.
+    - That would be Prompt 3: Understanding Domain Models and Business Concept because it was the topic I didi not understand the most and I was able to grasp it in less time.
 
 * What would you do differently next time you approach an unfamiliar codebase?
 
-- Diffenatly follow the steps I have learned above instead of using my old methods of understanding project structure.
+    - Diffenatly follow the steps I have learned above instead of using my old methods of understanding project structure.
 
 * What additional tools or resources would complement the AI prompting approach?
 
-- Use code  search tools t look for key words and readme files.
+    - Use code  search tools t look for key words and readme files.
