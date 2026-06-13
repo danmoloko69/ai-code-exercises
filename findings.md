@@ -200,3 +200,20 @@ Exercise Part 4: Practical Application
 * What would be your next steps to deepen your understanding
 
 - Understanding more on the data flow functionality from the cli to the main app.py logic.
+
+
+Final Discussion and Reflection
+
+2. Personal Refletion
+
+* Which prompt was most helpful for building your understanding?
+
+- That would be Prompt 3: Understanding Domain Models and Business Concept because it was the topic I didi not understand the most and I was able to grasp it in less time.
+
+* What would you do differently next time you approach an unfamiliar codebase?
+
+- Diffenatly follow the steps I have learned above instead of using my old methods of understanding project structure.
+
+* What additional tools or resources would complement the AI prompting approach?
+
+- Use code  search tools t look for key words and readme files.
