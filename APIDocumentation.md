@@ -235,6 +235,7 @@ tags:
     description: User registration endpoints
 
 paths:
+
   /api/users/register:
     post:
       tags: [Users]
