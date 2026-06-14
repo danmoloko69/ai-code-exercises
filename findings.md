@@ -2,7 +2,7 @@
 
 ## Form initial understanding:
 
-* Write best guess aboout how the codebase is orginised.
+* Write best guess about how the codebase is organised.
 
     - I think the Task Manager project is a application that crates, list and prioritises task base on their due date. After the stats function gathered information on task completed in the 7 day, status and priority.
 
@@ -12,15 +12,15 @@
 
 * Identify what you think are the main components.
 
-    - I think it would be the TaskManager with its components like models.py to define the data structure, storage.py for loading task, cli.py dtermines the command line interface.
+    - I think it would be the TaskManager with its components like models.py to define the data structure, storage.py for loading task, cli.py determines the command line interface.
 
 ## Apply the Project Structure Prompt:
 
 * Compare the AI's analysis with your own observation.
 
-    - The AI clerified that Task Manager project is a command-line task management app, not only a creating task and list and due-date prioritization. It also update, tag, delete, and inspect tasks. Tasks can have a title and description, priority: LOW, MEDIUM, HIGH, URGENT, a status: todo, in_progress, review, done and an optional due date. With tags created/updated/completed timestamps.
+    - The AI clarified that Task Manager project is a command-line task management app, not only a creating task and list and due-date prioritization. It also update, tag, delete, and inspect tasks. Tasks can have a title and description, priority: LOW, MEDIUM, HIGH, URGENT, a status: todo, in_progress, review, done and an optional due date. With tags created/updated/completed timestamps.
 
-    - The liabrary I stated are correct but it uses even more like json fro saving and loading task, os to check whether the storage files axist, uuid to generate unique task IDs and enum for task priority and staus values.
+    - The library I stated are correct but it uses even more like json for saving and loading task, is to check whether the storage files axist, uuid to generate unique task IDs and enum for task priority and status values.
 
     - It also explains the main components models.py, storage.py, cli.py and app.py.
 
@@ -42,7 +42,7 @@
 
     - models.py defines the core data structure: Task, TaskPriority, TaskStatus. This is where task fields and task behaviour like mark_as_done() and is_overdue() live.
 
-    - storage.py this handles persistance. Laod task from tasks.json, save task back to json, and provides methods to add, update, delete and retrieve tasks.
+    - storage.py this handles persistence. Load task from tasks.json, save task back to json, and provides methods to add, update, delete and retrieve tasks.
 
 
 
@@ -54,13 +54,13 @@
 
     - I think it would belong to the cli.py, app.py, storage.py and model.py components as they depend on each other. 
 
-* Note which existing comoponents might need to be modified.
+* Note which existing components might need to be modified.
 
     - I think cli.py will have to add export command and app.py in the logic we will also have to add export to CSV. 
 
 * List search  terms used and files you found.
 
-    - I use the CSV extention files name which I expected to be completely inaccurate.
+    - I use the CSV extension files name which I expected to be completely inaccurate.
 
 ## Document your findings:
 
@@ -70,21 +70,21 @@
 
     - The main export logic would belong to the app.py the TaskManager class. This would be in a form of method that decide which task to export
 
-    - From the storage.py, data will be pulled but it will not be responsible for formating the CSV files as it used for persistance and loading task.
+    - From the storage.py, data will be pulled but it will not be responsible for formatting the CSV files as it used for persistence and loading task.
 
     - Models.py file that defines what current task actually contain will be important for the exporting feature.
 
 * Note related components that would be affected.
 
-    - This are the componets mentioned above cli.py, app.py, storage.py, models.py
+    - This are the components mentioned above cli.py, app.py, storage.py, models.py
 
-*  Outline a plan for how you would approach implimenting the export feature.
+*  Outline a plan for how you would approach implementing the export feature.
 
     - I will look at how the cli calls TaskManager from the app.py file and how app.py retrieves information from the storage.py file. 
 
     - Determine the best location for the for the export command in the cli.py and add it.
 
-    - After look in app.py logic and where to add the exprt logic method. It can reuse the list_task().
+    - After look in app.py logic and where to add the export logic method. It can reuse the list_task().
 
     - Then convert task objects into CSV rows. This will convert into a readable string. Use the CSV module csv.DictWriter instead of manually joining.
 
@@ -114,9 +114,9 @@
 
     - Task: this is the core item the app manages, it has the title, description, priority, status, due dates, timestamps, completion date and tags. 
 
-    - TaskStatus: an enumiration that represents where a task is in workflow, TODO, IN_PROGRESS, REVIEW and DONE.
+    - TaskStatus: an enumeration that represents where a task is in workflow, TODO, IN_PROGRESS, REVIEW and DONE.
 
-    - TaskPriority: an enumiration that determines the tasks importantance, LOW, MEDIUM, HIGH and URGENT.
+    - TaskPriority: an enumeration that determines the tasks importance, LOW, MEDIUM, HIGH and URGENT.
 
     - TaskStorage: it handles saving and loading a collection of task from task.json.
 
@@ -127,7 +127,7 @@
 
 * Create a glossary of domain terms used in the application.
 
-    - Task: The main item of application can have title, description, stauts, due date, timestamp and tags.
+    - Task: The main item of application can have title, description, status, due date, timestamp and tags.
 
     - TaskID: A unique number generated using UUID used to find a specific task.
 
@@ -137,7 +137,7 @@
 
     - Status: This shows current stage of the task. Can be TODO, IN_PROGRESS, REVIEW and DONE.
 
-    - Priority: The imprtance of the task. Can be LOW, MEDIUM, HIGH and URGENT.
+    - Priority: The importance of the task. Can be LOW, MEDIUM, HIGH and URGENT.
 
     - Due date: This is the date in which the task need to be completed. Its optional.
 
@@ -145,19 +145,19 @@
 
     - Created at: The timestamp on when the task was created.
 
-    - Updated at: The timestamp showig when its was last changed
+    - Updated at: The timestamp showing when its was last changed
 
-    - Complited at: Timestamp showing on when it was complited.
+    - Completed at: Timestamp showing on when it was completed.
 
     - Tag: A label used to group certain task.
 
-    - Task manager: Is the aplication that manages task handling like list and updating.
+    - Task manager: Is the application that manages task handling like list and updating.
 
     - Task Storage: This infrastructure is responsible for saving and loading task from task.json.
 
     - Statistics: A summary of total task, task by priority, overdue task and tasks completed in the last 7 days.
 
-    - Persistance: Saving of task data so it still exist after the program closes. This is in tasks.json.
+    - Persistence: Saving of task data so it still exist after the program closes. This is in tasks.json.
 
 
 
@@ -167,15 +167,15 @@
 
 * Identify which files you would need to modify
 
-    - This will include model.py, cli.py and the main logic app.py with storage not mmodified as it only verifies persistance.
+    - This will include model.py, cli.py and the main logic app.py with storage not modified as it only verifies persistance.
 
 * Outline the changes you would make to implement this rule
 
-    - Firstly on the model.py file I would add a new status ABANDONED
+    - Firstly, on the model.py file I would add a new status ABANDONED
 
     - Then add a function to check whether a task is over due by 7 days and not of high priority.
 
-    - Then on main logic app.py add a logc that automatically marks old overdue task as abandoned. 
+    - Then on main logic app.py add a logic that automatically marks old overdue task as abandoned. 
 
     - The cli.py also will be updated on its status list. This will allow it to filter by new status.
 
@@ -185,7 +185,7 @@
 
     - Should users be allowed to manually mark task as abandoned. 
 
-    - Should the ovedue for more 7 days mean exactly on the same day or following day
+    - Should the ove due for more 7 days mean exactly on the same day or following day
 
 ## Reflection: 
 
@@ -195,7 +195,7 @@
 
 * What aspects of the codebase are you still unsure about
 
-    - This would be the cli intergration with the main app.py and the data flow.
+    - This would be the cli integration with the main app.py and the data flow.
 
 * What would be your next steps to deepen your understanding
 
@@ -204,16 +204,16 @@
 
 # Final Discussion and Reflection
 
-## Personal Refletion
+## Personal Reflection
 
 * Which prompt was most helpful for building your understanding?
 
-    - That would be Prompt 3: Understanding Domain Models and Business Concept because it was the topic I didi not understand the most and I was able to grasp it in less time.
+    - That would be Prompt 3: Understanding Domain Models and Business Concept because it was the topic I did not understand the most and I was able to grasp it in less time.
 
 * What would you do differently next time you approach an unfamiliar codebase?
 
-    - Diffenatly follow the steps I have learned above instead of using my old methods of understanding project structure. This would reduce the time it takes to undeerstand the project structure.
+    - I will follow the steps I have learned above instead of using my old methods of understanding project structure. This would reduce the time it takes to understand the project structure.
 
 * What additional tools or resources would complement the AI prompting approach?
 
-    - Use code  search tools t look for key words and readme files this would make it more easier to go through the structure of the project.
+    - Use code search tools to look for key words and readme files this would make it more easier to go through the structure of the project.
