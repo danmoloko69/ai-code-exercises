@@ -52,7 +52,8 @@
     - **def calculate_task_score(task):**
 
     """
-     Compute a numeric importance score for a task.
+
+    Compute a numeric importance score for a task.
     
     The score is used for ranking tasks in priority order. Higher scores indicate
     tasks that should appear earlier. The score combines explicit priority, due
@@ -61,24 +62,29 @@
     Completed tasks are penalized heavily so they usually fall below active work.
     Tasks in review are penalized slightly because they may need less attention
     than tasks still in progress.
+
     """
 
     - **def sort_tasks_by_importance(tasks):**
 
     """
+
     Return tasks ordered from most important to least important.
 
     Each task is scored once using calculate_task_score(), then the tasks are
     sorted by that score in descending order.
+
     """
 
     - **def get_top_priority_tasks(tasks):**
 
     """
+
     Return the highest-ranked tasks according to the task importance score.
     
     By default, this returns the top 5 tasks after applying the same ranking
     rules used by sort_tasks_by_importance().
+
     """
 
 
@@ -90,48 +96,91 @@
 calculate_task_score(task)
 
 Start
+
   |
+
   v
+
 Look up task.priority in priority_weights
+
   |
+
   v
+
 score = priority_weight * 10
+
   |
+
   v
+
 Does task have a due_date?
+
   |-- no --> skip due-date scoring
+
   |
+
   |-- yes
+
         |
+
         v
+
     Calculate days_until_due
+
         |
+        
         |-- days_until_due < 0  --> add 35
+
         |-- days_until_due == 0 --> add 20
+
         |-- days_until_due <= 2 --> add 15
+
         |-- days_until_due <= 7 --> add 10
+
         |-- otherwise           --> add 0
+
   |
+
   v
+
 Check task.status
+
   |
+
   |-- DONE   --> subtract 50
+
   |-- REVIEW --> subtract 15
+
   |-- other  --> subtract 0
+
   |
+
   v
+
 Does task have any tag in ["blocker", "critical", "urgent"]?
+
   |
+
   |-- yes --> add 8
+
   |-- no  --> add 0
+
   |
+
   v
+
 Was task updated less than 1 day ago?
+
   |
+
   |-- yes --> add 5
+
   |-- no  --> add 0
+
   |
+
   v
+
 Return final score
 
 * With the refactored version breaks the original scoring logic into small helper functions. Where each helper is responsible task score that might change like get_priority_score that handles score from priority, get_due_date_score that adds urgency points for overdue or soon dues date, get_status_score that subtracts point for task that are done or in review, get_tag_score thats adds a small boots for important tags like critical and urgent and get_recent_activity_score that adds points recently updated task.
