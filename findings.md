@@ -24,7 +24,7 @@
 
     - It also explains the main components models.py, storage.py, cli.py and app.py.
 
-## Documnet your findings:
+## Document your findings:
 
 * Record any misconceptions you had.
 
