@@ -49,7 +49,8 @@
 
 * Well for commenting certain function could have more in detail comments:
 
-    - def calculate_task_score(task):
+    - **def calculate_task_score(task):**
+
     """
      Compute a numeric importance score for a task.
     
@@ -62,15 +63,17 @@
     than tasks still in progress.
     """
 
-    - def sort_tasks_by_importance(tasks):
+    - **def sort_tasks_by_importance(tasks):**
+
     """
     Return tasks ordered from most important to least important.
 
     Each task is scored once using calculate_task_score(), then the tasks are
     sorted by that score in descending order.
     """
-    
-    - def get_top_priority_tasks(tasks):
+
+    - **def get_top_priority_tasks(tasks):**
+
     """
     Return the highest-ranked tasks according to the task importance score.
     
