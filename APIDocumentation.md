@@ -217,193 +217,192 @@ response = requests.post('https://api.example.com/api/users/register',
 ## Prompt 2: API Reference Conversion
 
 openapi: 3.0.0
-info:
-  title: User Registration API
-  version: 1.0.0
-  contact:
-    name: API Support
-    email: api-support@example.com
+    info:
+    title: User Registration API
+    version: 1.0.0
+    contact:
+        name: API Support
+        email: api-support@example.com
 
-servers:
-  - url: https://api.example.com
-    description: Production
-  - url: http://localhost:5000
-    description: Development
+    servers:
+    - url: https://api.example.com
+        description: Production
+    - url: http://localhost:5000
+        description: Development
 
-tags:
-  - name: Users
-    description: User registration endpoints
+    tags:
+    - name: Users
+        description: User registration endpoints
 
-paths:
-
-  /api/users/register:
-    post:
-      tags: [Users]
-      summary: Register a new user
-      description: Creates a new user account with validation for required fields, duplicates, email format, and password strength. Sends confirmation email on success.
-      operationId: registerUser
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserRegistrationRequest'
-            examples:
-              success:
-                value:
-                  username: johndoe
-                  email: john@example.com
-                  password: SecurePass123!
-
-      responses:
-        '201':
-          description: User registered successfully
-          content:
+    paths:
+    /api/users/register:
+        post:
+        tags: [Users]
+        summary: Register a new user
+        description: Creates a new user account with validation for required fields, duplicates, email format, and password strength. Sends confirmation email on success.
+        operationId: registerUser
+        requestBody:
+            required: true
+            content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/SuccessResponse'
-              example:
-                message: User registered successfully
-                user:
-                  id: 123
-                  username: johndoe
-                  email: john@example.com
-                  created_at: '2024-06-15T10:30:45.123456'
-                  role: user
+                schema:
+                $ref: '#/components/schemas/UserRegistrationRequest'
+                examples:
+                success:
+                    value:
+                    username: johndoe
+                    email: john@example.com
+                    password: SecurePass123!
 
-        '400':
-          description: Bad Request (missing field, invalid email, weak password)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                missing_field:
-                  value:
-                    error: Missing required field
-                    message: username is required
-                invalid_email:
-                  value:
-                    error: Invalid email
-                    message: Please provide a valid email address
-                weak_password:
-                  value:
-                    error: Weak password
-                    message: Password must be at least 8 characters long
+        responses:
+            '201':
+            description: User registered successfully
+            content:
+                application/json:
+                schema:
+                    $ref: '#/components/schemas/SuccessResponse'
+                example:
+                    message: User registered successfully
+                    user:
+                    id: 123
+                    username: johndoe
+                    email: john@example.com
+                    created_at: '2024-06-15T10:30:45.123456'
+                    role: user
 
-        '409':
-          description: Conflict (username/email already exists)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              examples:
-                username_taken:
-                  value:
-                    error: Username taken
-                    message: Username is already in use
-                email_exists:
-                  value:
-                    error: Email exists
-                    message: An account with this email already exists
+            '400':
+            description: Bad Request (missing field, invalid email, weak password)
+            content:
+                application/json:
+                schema:
+                    $ref: '#/components/schemas/ErrorResponse'
+                examples:
+                    missing_field:
+                    value:
+                        error: Missing required field
+                        message: username is required
+                    invalid_email:
+                    value:
+                        error: Invalid email
+                        message: Please provide a valid email address
+                    weak_password:
+                    value:
+                        error: Weak password
+                        message: Password must be at least 8 characters long
 
-        '500':
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-              example:
-                error: Server error
-                message: Failed to register user
+            '409':
+            description: Conflict (username/email already exists)
+            content:
+                application/json:
+                schema:
+                    $ref: '#/components/schemas/ErrorResponse'
+                examples:
+                    username_taken:
+                    value:
+                        error: Username taken
+                        message: Username is already in use
+                    email_exists:
+                    value:
+                        error: Email exists
+                        message: An account with this email already exists
 
-components:
-  schemas:
-    UserRegistrationRequest:
-      type: object
-      required: [username, email, password]
-      properties:
-        username:
-          type: string
-          minLength: 1
-          maxLength: 255
-          pattern: '^[a-zA-Z0-9_-]+$'
-          description: Unique username (alphanumeric, underscore, hyphen only)
-          example: johndoe
-        email:
-          type: string
-          format: email
-          minLength: 5
-          maxLength: 255
-          description: Valid email address (stored in lowercase)
-          example: john@example.com
-        password:
-          type: string
-          minLength: 8
-          maxLength: 128
-          format: password
-          description: Password (min 8 characters, mix of upper/lower/numbers/symbols recommended)
-          example: SecurePass123!
+            '500':
+            description: Internal Server Error
+            content:
+                application/json:
+                schema:
+                    $ref: '#/components/schemas/ErrorResponse'
+                example:
+                    error: Server error
+                    message: Failed to register user
 
-    User:
-      type: object
-      required: [id, username, email, created_at, role]
-      properties:
-        id:
-          type: integer
-          format: int64
-          example: 123
-        username:
-          type: string
-          example: johndoe
-        email:
-          type: string
-          format: email
-          example: john@example.com
-        created_at:
-          type: string
-          format: date-time
-          example: '2024-06-15T10:30:45.123456'
-        role:
-          type: string
-          enum: [user, admin, moderator]
-          example: user
+    components:
+    schemas:
+        UserRegistrationRequest:
+        type: object
+        required: [username, email, password]
+        properties:
+            username:
+            type: string
+            minLength: 1
+            maxLength: 255
+            pattern: '^[a-zA-Z0-9_-]+$'
+            description: Unique username (alphanumeric, underscore, hyphen only)
+            example: johndoe
+            email:
+            type: string
+            format: email
+            minLength: 5
+            maxLength: 255
+            description: Valid email address (stored in lowercase)
+            example: john@example.com
+            password:
+            type: string
+            minLength: 8
+            maxLength: 128
+            format: password
+            description: Password (min 8 characters, mix of upper/lower/numbers/symbols recommended)
+            example: SecurePass123!
 
-    SuccessResponse:
-      type: object
-      required: [message, user]
-      properties:
-        message:
-          type: string
-          example: User registered successfully
-        user:
-          $ref: '#/components/schemas/User'
+        User:
+        type: object
+        required: [id, username, email, created_at, role]
+        properties:
+            id:
+            type: integer
+            format: int64
+            example: 123
+            username:
+            type: string
+            example: johndoe
+            email:
+            type: string
+            format: email
+            example: john@example.com
+            created_at:
+            type: string
+            format: date-time
+            example: '2024-06-15T10:30:45.123456'
+            role:
+            type: string
+            enum: [user, admin, moderator]
+            example: user
 
-    ErrorResponse:
-      type: object
-      required: [error, message]
-      properties:
-        error:
-          type: string
-          description: Error type/code
-          example: Invalid email
-        message:
-          type: string
-          description: Detailed error message
-          example: Please provide a valid email address
+        SuccessResponse:
+        type: object
+        required: [message, user]
+        properties:
+            message:
+            type: string
+            example: User registered successfully
+            user:
+            $ref: '#/components/schemas/User'
 
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: X-API-Key
+        ErrorResponse:
+        type: object
+        required: [error, message]
+        properties:
+            error:
+            type: string
+            description: Error type/code
+            example: Invalid email
+            message:
+            type: string
+            description: Detailed error message
+            example: Please provide a valid email address
 
-security:
-  - ApiKeyAuth: []
+    securitySchemes:
+        ApiKeyAuth:
+        type: apiKey
+        in: header
+        name: X-API-Key
 
-externalDocs:
-  description: Full documentation
-  url: https://docs.example.com/user-registration
+    security:
+    - ApiKeyAuth: []
+
+    externalDocs:
+    description: Full documentation
+    url: https://docs.example.com/user-registration
 
 
 ## Prompt 3: API Usage Guide Creation
