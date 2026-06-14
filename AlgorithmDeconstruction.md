@@ -183,6 +183,7 @@ Was task updated less than 1 day ago?
 
 Return final score
 
+
 * With the refactored version breaks the original scoring logic into small helper functions. Where each helper is responsible task score that might change like get_priority_score that handles score from priority, get_due_date_score that adds urgency points for overdue or soon dues date, get_status_score that subtracts point for task that are done or in review, get_tag_score thats adds a small boots for important tags like critical and urgent and get_recent_activity_score that adds points recently updated task.
 Then the calculator_task_score simply adds all those together making it easier to read.
 
