@@ -51,41 +51,41 @@
 
     - **def calculate_task_score(task):**
 
-    """
+        """
 
-    Compute a numeric importance score for a task.
-    
-    The score is used for ranking tasks in priority order. Higher scores indicate
-    tasks that should appear earlier. The score combines explicit priority, due
-    date urgency, workflow status, special tags, and recent activity.
-    
-    Completed tasks are penalized heavily so they usually fall below active work.
-    Tasks in review are penalized slightly because they may need less attention
-    than tasks still in progress.
+        Compute a numeric importance score for a task.
+        
+        The score is used for ranking tasks in priority order. Higher scores indicate
+        tasks that should appear earlier. The score combines explicit priority, due
+        date urgency, workflow status, special tags, and recent activity.
+        
+        Completed tasks are penalized heavily so they usually fall below active work.
+        Tasks in review are penalized slightly because they may need less attention
+        than tasks still in progress.
 
-    """
+        """
 
     - **def sort_tasks_by_importance(tasks):**
 
-    """
+        """
 
-    Return tasks ordered from most important to least important.
+        Return tasks ordered from most important to least important.
 
-    Each task is scored once using calculate_task_score(), then the tasks are
-    sorted by that score in descending order.
+        Each task is scored once using calculate_task_score(), then the tasks are
+        sorted by that score in descending order.
 
-    """
+        """
 
     - **def get_top_priority_tasks(tasks):**
 
-    """
+        """
 
-    Return the highest-ranked tasks according to the task importance score.
-    
-    By default, this returns the top 5 tasks after applying the same ranking
-    rules used by sort_tasks_by_importance().
+        Return the highest-ranked tasks according to the task importance score.
+        
+        By default, this returns the top 5 tasks after applying the same ranking
+        rules used by sort_tasks_by_importance().
 
-    """
+        """
 
 **Prompt 3: Understand Complex Logic and Control Flow**
 
