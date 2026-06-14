@@ -1,4 +1,4 @@
-Exercise: Algorithm Deconstruction Challenge
+# Exercise: Algorithm Deconstruction Challenge
 
 1. Task priority sorting and filtering algorithm 
 
