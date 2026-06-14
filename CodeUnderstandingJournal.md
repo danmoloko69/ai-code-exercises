@@ -10,9 +10,9 @@
     
     - Starting at the cli.py where the user put in their input to create or update task. The ist calls TaskManager method in app.py.
 
-    - Then the app.py applies the logic by either creating the task trhough the create_task function or updates the status through update_task_status.
+    - Then the app.py applies the logic by either creating the task through the create_task function or updates the status through update_task_status.
 
-    - The the models.py file will provide the Task object for taask creation and status enum for updating the statuses.
+    - The the models.py file will provide the Task object for task creation and status enum for updating the statuses.
 
     - In the last step the storage.py will save or updates task in task.json.
 
@@ -20,20 +20,20 @@
 
     - Task are stored using json file which is task.json. When a task is created the TaskManager passes the Task to task storage which is keeps it in an in memory dictionary. Using task ID as the key it can call save() to write all task to json file. Because task has python objects like enum and dates TaskEncoder converts them into a string, number and formatted dates.
 
-    - Then when the app start again TaskStorage.load() checks weather json exist, read it and uses TaskDecoder to rebuild the save back into TAsk object. Retrieval method then reads into in_memory dictionary.
+    - Then when the app start again TaskStorage.load() checks weather json exist, read it and uses TaskDecoder to rebuild the save back into Task object. Retrieval method then reads into in_memory dictionary.
 
-* Any interesting design paatterns you discovered.
+* Any interesting design patterns you discovered.
 
     - Repository like pattern TaskStorage behaves like a small repository that hides how tasks are saved, loaded and updated.
 
 
-# Exercise Part 2: Deepen Understaing Through Guided Questions
+# Exercise Part 2: Deepen Understanding Through Guided Questions
 
 ## 1. Recording in your journal:
 
 * Your initial understanding vs. what you discovered.
 
-    - My initial understanding was when a user creates a task and indicates as high priority then goes through to app.py gets dependencies from models.py afte the tasks is recorded to storage with that high priority. And when the get_stats is called by prioritization the task will be included.
+    - My initial understanding was when a user creates a task and indicates as high priority then goes through to app.py gets dependencies from models.py after the tasks is recorded to storage with that high priority. And when the get_stats is called by prioritization the task will be included.
 
     - The I discovered that this code stores and filter priority but does not automatically decide what should be done first.
 
@@ -43,7 +43,7 @@
 
 * Any misconceptions you had that were clarified.
 
-    - I initialy thought that any inputs out of the four enum will be ignored but it was clarified that they are prevented by the cli ot rejected with an error.
+    - I initially thought that any inputs out of the four enum will be ignored but it was clarified that they are prevented by the cli or rejected with an error.
 
 
 
@@ -119,13 +119,13 @@
 
 * Potential points of failure in this process
 
-    - Firstly user inpur errors are are handled early by argparse for invalid priority or status
+    - Firstly user input errors are handled early by argparse for invalid priority or status
 
     - Then date errors are handled inside TaskManager where invalid date formate casuses ValueError
 
-    - When the task does not exist storage return none or False then cli print faliure message 
+    - When the task does not exist storage return none or False then cli print failure message 
 
-    - Other issues for storage like task.json missing, corrupt or baddly formatted storage.load() print an "Error loading tasks"
+    - Other issues for storage like task.json missing, corrupt or badly formatted storage.load() print an "Error loading tasks"
 
     - If saving fails, storage.save() also prints "Error saving tasks" although to user may appear successful.
 
