@@ -55,21 +55,6 @@
             Raised if due_date or updated_at is not a datetime-compatible value,
             or if tags is not iterable.
 
-    Example:
-        >>> from datetime import datetime, timedelta
-        >>> from models import Task, TaskPriority
-        >>>
-        >>> task = Task(
-        ...     title="Fix checkout bug",
-        ...     priority=TaskPriority.URGENT,
-        ...     due_date=datetime.now() + timedelta(days=1),
-        ...     tags=["blocker"]
-        ... )
-        >>>
-        >>> score = calculate_task_score(task)
-        >>> print(score)
-        88
-
     Notes:
         - Priority is the base scoring factor:
           LOW = 10, MEDIUM = 20, HIGH = 40, URGENT = 60.
@@ -191,7 +176,8 @@
 * Suggested Inline Comments
 
     def calculate_task_score(task):
-        """Calculate a priority score for a task based on priority, due date, status, tags, and recency."""
+
+        Calculate a priority score for a task based on priority, due date, status, tags, and recency.
 
         # Assign each priority level a weight. Higher priority means a larger base score.
         priority_weights = {
