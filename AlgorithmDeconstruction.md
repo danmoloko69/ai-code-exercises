@@ -41,7 +41,43 @@
 
 **Prompt 2: Decipher Code with Unclear Intent or Poor Documentation**
 
-* 
+* With "get_top_priority_task" sounding like it only looks for at task priority but actually considers due date, status, tags and recent updates too.
+
+* So for better naming some function can be changed from for example "calculation_task_score" can be "calculating_task_importance_score", "sort_task_by_importance" to "rank_tasks_by_importance" and "get_top_priority_task" to "get_highest_priority_tasks". 
+
+* Other possible pattern techniques the algorithm can use is the sort-derived-key pattern that calculates a value from each object and sorts by that values. 
+
+* Well for commenting certain function could have more in detail comments:
+
+    - def calculate_task_score(task):
+    """
+     Compute a numeric importance score for a task.
+    
+    The score is used for ranking tasks in priority order. Higher scores indicate
+    tasks that should appear earlier. The score combines explicit priority, due
+    date urgency, workflow status, special tags, and recent activity.
+    
+    Completed tasks are penalized heavily so they usually fall below active work.
+    Tasks in review are penalized slightly because they may need less attention
+    than tasks still in progress.
+    """
+
+    - def sort_tasks_by_importance(tasks):
+    """
+    Return tasks ordered from most important to least important.
+
+    Each task is scored once using calculate_task_score(), then the tasks are
+    sorted by that score in descending order.
+    """
+    
+    - def get_top_priority_tasks(tasks):
+    """
+    Return the highest-ranked tasks according to the task importance score.
+    
+    By default, this returns the top 5 tasks after applying the same ranking
+    rules used by sort_tasks_by_importance().
+    """
+
 
 
 **Prompt 3: Understand Complex Logic and Control Flow**
