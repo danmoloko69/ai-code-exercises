@@ -2,6 +2,8 @@
 
 ## 1. Task priority sorting and filtering algorithm 
 
+## ** Prompt 1: Understand an Algorithm Through Step-by-Step Analysis **
+
 * This algorithm assing each task a score based on the task priority, due date if assigned and task completion status. Then sorts tasks from the highest score to lowest.
 
 * It start by giving task score based on priority:
