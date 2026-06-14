@@ -7,6 +7,7 @@
 * def calculate_task_score(task):
 
     """
+    
     Calculate a numeric priority score for a task based on several importance factors.
 
     This function assigns a score to a task by combining its priority level, due date,
@@ -138,7 +139,7 @@
     The function then adjusts the score based on task status. Completed tasks are reduced heavily because they usually no longer need active work. Tasks in review are also reduced, but by a smaller amount.
 
     - `TaskStatus.DONE` subtracts `50`
-    
+
     - `TaskStatus.REVIEW` subtracts `15`
 
     Next, the function checks the task's tags. If the task contains one of the tags `"blocker"`, `"critical"`, or `"urgent"`, it receives an additional `+8` points. This helps highlight tasks that may affect other work or need immediate attention.
