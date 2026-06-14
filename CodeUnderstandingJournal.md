@@ -1,6 +1,6 @@
 # Exercise Part 1: Understanding a Specific Feature
 
-1. Recording in your journal:
+## 1. Recording in your journal:
 
 * The main components involved in task creation/updates
 
@@ -29,7 +29,7 @@
 
 # Exercise Part 2: Deepen Understaing Through Guided Questions
 
-1. Recording in your journal:
+## 1. Recording in your journal:
 
 * Your initial understanding vs. what you discovered.
 
@@ -49,7 +49,7 @@
 
 # Exercise Part 3: Mapping Data Flow
 
-1. Recording in your journal:
+## 1. Recording in your journal:
 
 *  A diagram of the data flow
 
