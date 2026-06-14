@@ -38,3 +38,66 @@
 
 * This prompt gave me insight on other methods of implementing a rule based algorithm using simple method line weighted point allocation.
 
+
+**Prompt 2: Decipher Code with Unclear Intent or Poor Documentation**
+
+* 
+
+
+**Prompt 3: Understand Complex Logic and Control Flow**
+
+* In this particular algorithm there are no loops except for the tags for scoring and sorting statement. What I found are the nested if statement for task due date and other simple if statement.
+
+calculate_task_score(task)
+
+Start
+  |
+  v
+Look up task.priority in priority_weights
+  |
+  v
+score = priority_weight * 10
+  |
+  v
+Does task have a due_date?
+  |-- no --> skip due-date scoring
+  |
+  |-- yes
+        |
+        v
+    Calculate days_until_due
+        |
+        |-- days_until_due < 0  --> add 35
+        |-- days_until_due == 0 --> add 20
+        |-- days_until_due <= 2 --> add 15
+        |-- days_until_due <= 7 --> add 10
+        |-- otherwise           --> add 0
+  |
+  v
+Check task.status
+  |
+  |-- DONE   --> subtract 50
+  |-- REVIEW --> subtract 15
+  |-- other  --> subtract 0
+  |
+  v
+Does task have any tag in ["blocker", "critical", "urgent"]?
+  |
+  |-- yes --> add 8
+  |-- no  --> add 0
+  |
+  v
+Was task updated less than 1 day ago?
+  |
+  |-- yes --> add 5
+  |-- no  --> add 0
+  |
+  v
+Return final score
+
+* With the refactored version breaks the original scoring logic into small helper functions. Where each helper is responsible task score that might change like get_priority_score that handles score from priority, get_due_date_score that adds urgency points for overdue or soon dues date, get_status_score that subtracts point for task that are done or in review, get_tag_score thats adds a small boots for important tags like critical and urgent and get_recent_activity_score that adds points recently updated task.
+Then the calculator_task_score simply adds all those together making it easier to read.
+
+* Potential bugs are that days_until_due = (task.due_date - datetime.now()).days the .days property rounds down based on full 24-hour period. So a task due later today might produce 0 and a task due tomorrow in less than 24 hours might also produce a 0.
+
+* The biggest key desicion priority as it crates base scores. Then due date follows as overdue task can get +35 meaning a low ovedue task will out rank high task. Then status and tags with lower impact, completed task be demoted to the buttom of the list.
