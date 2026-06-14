@@ -216,7 +216,7 @@ response = requests.post('https://api.example.com/api/users/register',
 
 ## Prompt 2: API Reference Conversion
 
-openapi: 3.0.0
+    openapi: 3.0.0
     info:
     title: User Registration API
     version: 1.0.0
