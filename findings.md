@@ -1,6 +1,6 @@
-Exercise Part 1: Understanding Project Structure
+# Exercise Part 1: Understanding Project Structure
 
-2. Form initial understanding:
+## Form initial understanding:
 
 * Write best guess aboout how the codebase is orginised.
 
@@ -14,7 +14,7 @@ Exercise Part 1: Understanding Project Structure
 
     - I think it would be the TaskManager with its components like models.py to define the data structure, storage.py for loading task, cli.py dtermines the command line interface.
 
-3. Apply the Project Structure Prompt:
+## Apply the Project Structure Prompt:
 
 * Compare the AI's analysis with your own observation.
 
@@ -24,7 +24,7 @@ Exercise Part 1: Understanding Project Structure
 
     - It also explains the main components models.py, storage.py, cli.py and app.py.
 
-4. Documnet your findings:
+## Documnet your findings:
 
 * Record any misconceptions you had.
 
@@ -46,9 +46,9 @@ Exercise Part 1: Understanding Project Structure
 
 
 
-Exercise Part 2: Finding Feature Implementation
+# Exercise Part 2: Finding Feature Implementation
 
-2. Form a hypothesis:
+## Form a hypothesis:
 
 * Based on your initial search, write down where you think task data export functionality might belong
 
@@ -62,7 +62,7 @@ Exercise Part 2: Finding Feature Implementation
 
     - I use the CSV extention files name which I expected to be completely inaccurate.
 
-4. Document your findings:
+## Document your findings:
 
 * Map out where in the codebase you would implement this new feature.
 
@@ -92,9 +92,9 @@ Exercise Part 2: Finding Feature Implementation
 
 
 
-Excercise Part 3: Understanding Domain Model
+# Excercise Part 3: Understanding Domain Model
 
-1. Extract domain model:
+## Extract domain model:
 
 * Identify the core entity cleases
 
@@ -108,7 +108,7 @@ Excercise Part 3: Understanding Domain Model
 
     - Task, Tags, TaskID, Status workflow, Priority scale and Overdue task.
 
-2. Form initial understanding 
+## Form initial understanding 
 
 * Write a brief explanation of what you think each entity represent.
 
@@ -123,7 +123,7 @@ Excercise Part 3: Understanding Domain Model
 * Note any questions or confusion you have about the business logic
     - I need a little clarity about the due_date_str if statement.
 
-4. Test your knowledge:
+## Test your knowledge:
 
 * Create a glossary of domain terms used in the application.
 
@@ -161,9 +161,9 @@ Excercise Part 3: Understanding Domain Model
 
 
 
-Exercise Part 4: Practical Application
+# Exercise Part 4: Practical Application
 
-2. Planning: Based on your understanding from the previous parts:
+## Planning: Based on your understanding from the previous parts:
 
 * Identify which files you would need to modify
 
@@ -187,7 +187,7 @@ Exercise Part 4: Practical Application
 
     - Should the ovedue for more 7 days mean exactly on the same day or following day
 
-3. Reflection: 
+## Reflection: 
 
 * How did the AI prompts help you understand where and how to implement this feature
 
@@ -202,9 +202,9 @@ Exercise Part 4: Practical Application
     - Understanding more on the data flow functionality from the cli to the main app.py logic.
 
 
-Final Discussion and Reflection
+# Final Discussion and Reflection
 
-2. Personal Refletion
+## Personal Refletion
 
 * Which prompt was most helpful for building your understanding?
 
