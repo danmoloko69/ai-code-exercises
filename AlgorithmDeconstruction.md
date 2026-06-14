@@ -1,6 +1,6 @@
 # Exercise: Algorithm Deconstruction Challenge
 
-1. Task priority sorting and filtering algorithm 
+## 1. Task priority sorting and filtering algorithm 
 
 * This algorithm assing each task a score based on the task priority, due date if assigned and task completion status. Then sorts tasks from the highest score to lowest.
 
