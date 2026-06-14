@@ -1,4 +1,4 @@
-Exercise Part 1: Understanding a Specific Feature
+# Exercise Part 1: Understanding a Specific Feature
 
 1. Recording in your journal:
 
@@ -27,7 +27,7 @@ Exercise Part 1: Understanding a Specific Feature
     - Repository like pattern TaskStorage behaves like a small repository that hides how tasks are saved, loaded and updated.
 
 
-Exercise Part 2: Deepen Understaing Through Guided Questions
+# Exercise Part 2: Deepen Understaing Through Guided Questions
 
 1. Recording in your journal:
 
@@ -47,7 +47,7 @@ Exercise Part 2: Deepen Understaing Through Guided Questions
 
 
 
-Exercise Part 3: Mapping Data Flow
+# Exercise Part 3: Mapping Data Flow
 
 1. Recording in your journal:
 
