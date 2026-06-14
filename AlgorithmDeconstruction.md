@@ -26,3 +26,13 @@
 
     No due date = +0
 
+    So task that are lower priority but overdue can outrank a higher-priority task that is not time-sensitive.
+
+* We look at status penalty with completed task being pushed down. Tasks in reviw are also reduced less than completed task. Ensuring that comppleted task never appears at the top of the important list.
+
+* With tagged task they are are boosted up by +8 regardless whether is has more than 1 tag or not. Then if a task was updated within the last day, it will get a +5 boost.
+
+* Whe sorting it start by giving each task a score, then follows with ordering the task from highest score to lowest score. In the sort_task_by_important function the code bulid (score, task) then calls sorted() so bigger score comes first. After sorting it removes away the score and returns only the task in ranked order. The core pattern used is weighted scoring algorithm instead of writing rules it converts factors into points.
+
+* This prompt gave me insight on other methods of implementing a rule based algorithm using simple method line weighted point allocation.
+
