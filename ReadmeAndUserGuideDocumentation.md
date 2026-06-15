@@ -13,7 +13,7 @@ TaskManagerProject helps users organize daily work by creating tasks with priori
 ## Features
 
 - **Create/Update/Delete Tasks** - Manage tasks with titles and descriptions
-- **Priority Levels** - 5-level priority system (1=lowest, 5=highest)
+- **Priority Levels** - 4-level priority system (1=lowest, 4=highest)
 - **Tags** - Custom tags for task categorization
 - **Due Dates** - Track time-sensitive tasks (YYYY-MM-DD format)
 - **Task Filtering** - Sort and filter by priority, tags, or due dates
@@ -51,7 +51,7 @@ TaskManagerProject helps users organize daily work by creating tasks with priori
 Enter command: create
 Task title: Complete project report
 Task description: Finish the quarterly report
-Priority (1-5): 4
+Priority (1-4): 4
 Tags (comma-separated): work,reports
 Due date (YYYY-MM-DD): 2024-03-15
 ```
@@ -67,7 +67,7 @@ Enter command: list
 ```
 Enter command: update
 Task ID: 1
-New priority: 5
+New priority: 4
 New tags: work,urgent,reports
 ```
 
@@ -75,7 +75,7 @@ New tags: work,urgent,reports
 ```
 Enter command: filter
 Filter by (tag/priority): priority
-Value: 5
+Value: 4
 ```
 
 ## Configuration
@@ -94,11 +94,10 @@ export TASK_DB_PATH=/path/to/custom/tasks.json
 
 ### Priority Levels
 
-- **Level 5**: Critical/Urgent
-- **Level 4**: High
-- **Level 3**: Medium
-- **Level 2**: Low
-- **Level 1**: Minimal
+- **Level 4**: Urgent
+- **Level 3**: High
+- **Level 2**: Medium
+- **Level 1**: LOW
 
 ## Troubleshooting
 
