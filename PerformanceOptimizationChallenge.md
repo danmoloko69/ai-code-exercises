@@ -27,7 +27,7 @@
 
 - So now the code goes throungh the whole 5000 products in 3.17 seconds meaning the performance was drastically improved from the initial 20 minutes.
 
-* So overall the code is faster becauese it does less unneccessary work . As now the it sort first that reduces future work.
+* So overall the code is faster becauese it does less unneccessary work . As now the it sort first that reduces future work. This showed me that the structure of the code really matters if it poor the the app wil be inefficient resulting in very poor result. 
 
 
 
