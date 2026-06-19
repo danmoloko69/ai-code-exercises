@@ -4,7 +4,7 @@
 
 **Error description and what it means**
 
-- The problem is that the program is trying to access an item in a list that does not axist. It  happens when it tries to acces item 3 specifically which doe not axist. 
+- The problem is that the program is trying to access an item in a list that does not exist. It  happens when it tries to access item 3 specifically which doe not exist.
 
 **Root causes identification**
 
@@ -18,7 +18,7 @@
 
 - Never use manual indexing when it can be avoided 
 
-- Must be able recognise pattern index vs a  display which will be diffferent.
+- Must be able recognise pattern index vs a  display which will be different.
 
 - Python enumerations are a much better way to do it.
 
