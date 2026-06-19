@@ -18,7 +18,7 @@ def find_product_combinations(products, target_price, price_margin=10):
     for i in range(len(products)):
         if i % 100 == 0:
             print(f"Processing product {i+1} of {len(products)}")
-        for j in range(len(products)):
+        for j in range(i + 1, len(products)):
             # Skip comparing a product with itself
             if i != j:
                 product1 = products[i]
