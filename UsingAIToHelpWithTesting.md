@@ -172,3 +172,8 @@
 
 **Expected outcome:** The task should receive the overdue bonus and the completed-task penalty.
 
+
+## Part 2: Improving a single Test
+
+**Exercise 2.1: Writing Your First Test**
+
