@@ -18,6 +18,13 @@
 
 **Exercise 1.2: Testing planning**
 
+**Test Dependencies**
+
+- `Task` model from `models.py`
+- `TaskPriority` enum from `models.py`
+- `TaskStatus` enum from `models.py`
+- `datetime` and `timedelta` for creating due dates and update dates
+
 **1. Base Priority Scoring**
 
 **Type:** Unit test
