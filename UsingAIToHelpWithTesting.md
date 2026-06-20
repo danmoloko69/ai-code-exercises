@@ -177,3 +177,13 @@
 
 **Exercise 2.1: Writing Your First Test**
 
+* Suggested improvements to my test
+
+- Base on the feedback the name of the task can explain more about the task.
+
+- Other suggestion was to make the set up comunicate deliberately excluded modifiers like due date and tags.
+
+- Also I had to make the assertion more informative when it fails and what is expected.
+
+- It was suggested that I also name why it is expects that certain score.
+
