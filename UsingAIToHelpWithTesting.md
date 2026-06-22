@@ -187,3 +187,9 @@
 
 - It was suggested that I also name why it is expects that certain score.
 
+## Part 3: Test-Driven Development Prectise 
+
+**Exercise 3.1: TDD for New Features**
+
+
+
