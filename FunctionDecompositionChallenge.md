@@ -2,7 +2,7 @@
 
 # Report Generation Function with Multiple Data Transformations
 
-* Identify the distinct responsibilities in the function
+**Identify the distinct responsibilities in the function**
 
 - The `generate_sales_report` has many responsibility cramed into one function namely: 
 
@@ -24,7 +24,7 @@
 
     - formatting output for the requested export type
 
-* Create a decomposiition plan
+**Create a decomposiition plan**
 
 - This will include a split off the responsibilities into their own functions namely:
 
@@ -50,7 +50,7 @@
 
 For the main function it will co-ordinate those helpers in order.
 
-* Extract helper functions with clear names and purposes
+**Extract helper functions with clear names and purposes.**
 
 - `validate_report_request()`. Checks that inputs are valid before any processing starts.
 
@@ -70,4 +70,4 @@ For the main function it will co-ordinate those helpers in order.
 
 - `generate_output()`. Sends the finished report to JSON, HTML, Excel, or PDF output.
 
-* Doocument refactoring approach and the benefits gained. 
+**Doocument refactoring approach and the benefits gained.** 
