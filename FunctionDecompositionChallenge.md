@@ -1,6 +1,6 @@
-## Exercise: Function Decomposition Challenge
+# Exercise: Function Decomposition Challenge
 
-# Report Generation Function with Multiple Data Transformations
+## Report Generation Function with Multiple Data Transformations
 
 **Identify the distinct responsibilities in the function**
 
