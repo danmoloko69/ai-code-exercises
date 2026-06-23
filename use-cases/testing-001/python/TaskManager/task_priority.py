@@ -2,7 +2,7 @@ from datetime import datetime
 
 from models import TaskStatus, TaskPriority
 
-def calculate_task_score(task):
+def calculate_task_score(task, current_user=None):
     """Calculate a priority score for a task based on multiple factors."""
     # Base priority weights
     priority_weights = {
@@ -36,6 +36,10 @@ def calculate_task_score(task):
     # Boost score for tasks with certain tags
     if any(tag in ["blocker", "critical", "urgent"] for tag in task.tags):
         score += 8
+
+    # Boost score for tasks assigned to the current user
+    if current_user and getattr(task, "assigned_to", None) == current_user:
+        score += 12
 
     # Boost score for recently updated tasks
     days_since_update = (datetime.now() - task.updated_at).days

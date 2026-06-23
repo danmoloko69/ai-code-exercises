@@ -55,3 +55,18 @@ def get_top_priority_tasks(tasks, limit=5):
     """Return the top N priority tasks."""
     sorted_tasks = sort_tasks_by_importance(tasks)
     return sorted_tasks[:limit]
+
+def test_task_assigned_to_current_user_gets_score_boost():
+    task = Task(
+        title="Write docs",
+        priority=TaskPriority.MEDIUM,
+        status=TaskStatus.TODO,
+        due_date=None,
+        tags=[],
+        assigned_to="alice",
+        updated_at=datetime.now() - timedelta(days=2),
+    )
+
+    score = calculate_task_score(task, current_user="alice")
+
+    assert score == 32

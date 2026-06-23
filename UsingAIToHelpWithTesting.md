@@ -187,9 +187,15 @@
 
 - It was suggested that I also name why it is expects that certain score.
 
-## Part 3: Test-Driven Development Prectise 
+## Part 3: Test-Driven Development Practise 
 
 **Exercise 3.1: TDD for New Features**
 
+* TDD process Implimentation
 
+- With the first written test it should fail because the `calculation_task_score` did not accept `current_user`.
+
+- Made some changes to the task_priority.py which adds an feature that checks if current user is equal to the assigned user then give 12 points.
+
+## Part 4: Intergrating 
 
