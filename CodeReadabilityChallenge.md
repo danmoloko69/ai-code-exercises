@@ -28,4 +28,4 @@
 
 **Would you rename any variables toimprove clarity**
 
-- On this one everything was clear I dont think I would rename any vaiables.
+- On this one everything was clear I dont think I would rename any variables.
