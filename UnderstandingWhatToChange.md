@@ -1,6 +1,6 @@
 # Exercise: Understanding What to Change with AI
 
-**Exercise 1: Code Readability Improvement (Java)**
+## Exercise 1: Code Readability Improvement (Java)
 
 * AI suggestion for improvements name,methods names and codee structure.
 
@@ -14,7 +14,7 @@
 
 - I would have missed the email validation method that lead to an securitty issue. 
 
-**Exercise 2: Function Refactoring (Python)**
+## Exercise 2: Function Refactoring (Python)
 
 * Identify how the function can be broken down into smaller more focused function.
 
@@ -24,7 +24,7 @@
 
 -  The AI generated refactoring include functions that still have functions that contains multiple processes which makes sense as it groups all validation rulees into 1. As for mine mostly they are separated.
 
-**Exercise 3: Code Duplication Detection (JavaScript)**
+## Exercise 3: Code Duplication Detection (JavaScript)
 
 * Identify the repeated patterns in this code
 
