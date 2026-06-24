@@ -65,7 +65,7 @@ End Goal: Build a smart contract in Solidity and successfully deploy it to an Et
 - Prerequisite: Able to write a multi-function Solidity contract and understand transaction flow.
 
 - Learning Steps:
-    1. Set up a Solidity development environment using Hardhat or Foundry.
+    1. Set up a Solidity development environment using Renix or Foundry.
 
     2. Write automated tests for contract behavior.
 
@@ -109,5 +109,16 @@ End Goal: Build a smart contract in Solidity and successfully deploy it to an Et
     3. Call at least one read function and one write function.
 
     4. View your transaction on a block explorer.
-    
+
     5. Explain what gas was paid for and why the contract now has a permanent address.
+
+## Part 4: Build aMini_Project
+
+**Define the simple projects**
+
+- This my sollidity contract that checks the inventory in the storage
+
+**Implimenting step by step**
+
+- Its
+
