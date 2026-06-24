@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, Query, status
 from typing import List, Optional
 
-from models import TodoCreate, TodoResponse, TodoStatus
+from .models.models import TodoCreate, TodoResponse, TodoStatus
 
 app = FastAPI(
     title="ToDo API",
