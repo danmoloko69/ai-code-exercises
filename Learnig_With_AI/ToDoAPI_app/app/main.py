@@ -4,8 +4,8 @@ from typing import List, Optional
 from models import TodoCreate, TodoResponse, TodoStatus
 
 app = FastAPI(
-    title="Beginner Friendly ToDo API",
-    description="A simple FastAPI example for creating, listing, completing, and deleting to-do items.",
+    title="ToDo API",
+    description="This is a FastAPI application for creating, listing, completing and deleting To-Do items.",
     version="0.1.0",
 )
 
