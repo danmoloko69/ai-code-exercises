@@ -41,4 +41,18 @@
 
 ## Part 3: Applied Contextual Learning
 
+**How does FastAPI’s approach to authentication compare to frameworks you’ve used before?**
 
+- The token logic is implimented as reusable dependency function not just a middleware.
+
+**What advantages does FastAPI’s dependency injection system provide for authentication?**
+
+- Dependency allows laying authanthication cleanly through JWT. This avoids repeating tokens. 
+
+**How does type hinting in FastAPI make security implementation clearer compared to other frameworks?**
+
+- By documenting exactly what each step expects and returns.
+
+**What patterns from other frameworks can you identify in the JWT implementation?**
+
+- One way would be a token endpoint that authenticates credentials and issues.
