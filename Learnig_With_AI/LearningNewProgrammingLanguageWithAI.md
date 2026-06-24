@@ -116,9 +116,22 @@ End Goal: Build a smart contract in Solidity and successfully deploy it to an Et
 
 **Define the simple projects**
 
-- This my sollidity contract that checks the inventory in the storage
+- This my solidity contract that checks the inventory in the storage
 
 **Implimenting step by step**
 
-- Its
+- Firstly, in specified the licenser and the version type of solidity i wiill be using.
 
+- Then I created the contract using `contract InventoryChecker{}`. My fisrt object is an struct that act like a dataclass in python.
+
+- Then I created an variabl for the owner Etherium address which is `owner`. Refering to the deployer of the contract.
+
+- I created a `mapping()` which is the ekey-value storagee structure that lives on-chain in the contracts storage.
+
+- The declared an `event ProductUpdaated()` log recoder for transactions.
+
+- Made a `Constructor()` this run only once when the contract is deployed to declare the deployer as the `owner`.
+
+- The made an `modifier onlyOwner()` that creates rule where if a condition is true will continue and if false will prrompt a message "Only owner can update inventory"
+
+- Then finally, we have 3 functions fisrt one is `function setItem()` this updates the inventory only by owner, `function getQuuantity()` this is a read-only function that check the quantity of a product in inventory, `function itemExist()` another read-only that checks if a product exist.    
